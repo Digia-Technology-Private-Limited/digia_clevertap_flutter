@@ -20,6 +20,7 @@ class _DigiaClevertapWidgetState extends State<DigiaClevertapWidget> {
     DigiaClevertapManager.instance.init();
 
     _subscription = DigiaClevertapManager.instance.actions.listen((event) {
+      WidgetsBinding.instance.ensureVisualUpdate();
       WidgetsBinding.instance.addPostFrameCallback((_) {
         DUIFactory().showUIAction(
           event.actionType,
