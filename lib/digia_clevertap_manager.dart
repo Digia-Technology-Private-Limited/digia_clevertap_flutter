@@ -44,9 +44,8 @@ class DigiaClevertapManager {
     if (_disposed || units == null || units.isEmpty) return;
 
     for (var unit in units) {
-      if (unit == null) continue;
-
-      final customExtras = unit["customExtras"];
+      final customExtras = unit["custom_kv"];
+      if (customExtras == null) continue;
 
       final command = customExtras["command"];
       final viewId = customExtras["viewId"];
